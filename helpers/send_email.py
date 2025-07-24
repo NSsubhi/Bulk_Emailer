@@ -35,7 +35,7 @@ def send_email(recipient, subject, body, resume_path):
     print(f"✅ Email sent to {recipient}")
 
 
-def send_emails_batch(df, backup_dict, sent_emails, sent_emails_path, resume_path="attachments/swaraj_resume.pdf"):
+def send_emails_batch(df, backup_dict, sent_emails, sent_emails_path, resume_path="attachments/SubhikshaResume.pdf"):
     for index, row in df.iterrows():
         email_id = row["Email"]
         company_name = row["Company"]
@@ -45,7 +45,7 @@ def send_emails_batch(df, backup_dict, sent_emails, sent_emails_path, resume_pat
             continue
 
         email_info = backup_dict.get(company_name, {})
-        subject = email_info.get("subject", "Introduction: Recent NYU CS Graduate Seeking Opportunities")
+        subject = email_info.get("subject", "Introduction: NYU CS Graduate Student Seeking Opportunities")
         body = email_info.get("body", "")
 
         if body:

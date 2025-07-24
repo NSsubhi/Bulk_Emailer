@@ -4,6 +4,7 @@ import time
 import random
 import pandas as pd
 from openai import OpenAI
+from dotenv import load_dotenv
 from helpers.clean_json import clean_gpt_json
 from helpers.send_email import send_emails_batch
 from helpers.sent_mails import load_sent_emails, save_sent_emails
@@ -11,6 +12,7 @@ from helpers.load_backup import load_backup_dict
 from helpers.segregate_companies import segregate_companies
 from helpers.generate_email_drafts import generate_email_drafts
 # Initialize OpenAI client
+load_dotenv()
 # generate the OPEN_API_KEY and store as env variable
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # Email sending function
